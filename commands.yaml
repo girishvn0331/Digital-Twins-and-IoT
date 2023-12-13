@@ -1,0 +1,13 @@
+az iot hub create --name <name-for-your-IoT-hub> --resource-group <your-resource-group> --sku S1
+
+az eventgrid event-subscription create --name demo-hub-event --event-delivery-schema eventgridschema --source-resource-id /subscriptions/<my-subscription>/resourceGroups/My-resource-group/providers/Microsoft.Devices/IotHubs/demo-iot-hub --included-event-types Microsoft.Devices.DeviceTelemetry --endpoint-type azurefunction --endpoint /subscriptions/<my-subscription>/resourceGroups/My-resource-group/providers/Microsoft.Web/sites/dt-functions/functions/ProcessHubToDTEvents
+
+az eventgrid event-subscription create --name <name-for-hub-event-subscription> --event-delivery-schema eventgridschema --source-resource-id /subscriptions/<your-subscription-ID>/resourceGroups/<your-resource-group>/providers/Microsoft.Devices/IotHubs/<your-IoT-hub> --included-event-types Microsoft.Devices.DeviceTelemetry --endpoint-type azurefunction --endpoint /subscriptions/<your-subscription-ID>/resourceGroups/<your-resource-group>/providers/Microsoft.Web/sites/<your-function-app>/functions/ProcessHubToDTEvents
+
+az functionapp function show --resource-group My-resource-group  --name dt-functions --function-name ProcessHubToDTEvents
+
+az functionapp function show --resource-group My-resource-group  --name dt-functions --function-name ProcessDTRoutedData
+
+Publish from AZ Cli
+
+demo [ ~ ]$ az functionapp deployment source config-zip --resource-group My-resource-group --name dt-functions --src /home/demo/publish.zip
