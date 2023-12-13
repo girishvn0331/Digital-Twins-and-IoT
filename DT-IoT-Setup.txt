@@ -217,7 +217,7 @@ Application Insights "dt-functions" was created for this Function App. You can v
 
   "containerSize": 1536,
 
-  "customDomainVerificationId": "83391E52B0C79363EE092E1ADCDEB54D3A6595EC9683B5084F1E207EC7EF7027",
+  "customDomainVerificationId": "0000",
 
   "dailyMemoryTimeQuota": 0,
 
@@ -323,9 +323,9 @@ Application Insights "dt-functions" was created for this Function App. You can v
 
   "name": "dt-functions",
 
-  "outboundIpAddresses": "20.204.218.251,20.204.221.48,20.204.222.92,20.204.222.136,20.204.223.202,20.207.104.118,20.192.170.11",
+  "outboundIpAddresses": "20.204.218.251,20.204.221.48,207.104.118,20.192.170.11",
 
-  "possibleOutboundIpAddresses": "20.204.218.251,20.204.221.48,20.204.222.92,20.204.222.136,20.204.223.202,20.207.104.118,20.207.105.212,20.204.218.4,20.204.218.122,20.207.106.54,20.207.108.37,20.207.108.162,20.207.111.19,20.219.41.239,20.219.42.144,20.204.219.216,20.219.43.124,20.219.44.75,20.219.45.80,20.207.105.195,20.219.40.197,20.219.45.106,20.219.43.182,20.204.219.233,20.207.111.211,20.207.109.178,20.207.111.220,20.219.40.149,20.219.41.103,20.219.42.157,20.192.170.11",
+  "possibleOutboundIpAddresses": "219.216,20.219.43.124,20.219.44.75,20.219.45.80,20.207.105.195,20.219.40.197,20.219.45.106,20.219.43.182,20.204.219.233,20.207.111.211,20.207.109.178,20.207.111.220,20.219.40.149,20.219.41.103,20.219.42.157,20.192.170.11",
 
   "publicNetworkAccess": null,
 
@@ -633,7 +633,7 @@ Deployment endpoint responded with status code 202
 
   "end_time": "2023-07-04T07:52:18.0021332Z",
 
-  "id": "544919e93ab348a5a1f5d6bf216f9d6e",
+  "id": "544919e6e",
 
   "is_readonly": true,
 
@@ -649,11 +649,11 @@ Deployment endpoint responded with status code 202
 
   "provisioningState": "Succeeded",
 
-  "received_time": "2023-07-04T07:52:09.2439251Z",
+  "received_time": "2023-07-04T07:52:09.2431Z",
 
   "site_name": "dt-functions",
 
-  "start_time": "2023-07-04T07:52:10.2456244Z",
+  "start_time": "2023-07-04T07:52:10.2456Z",
 
   "status": 4,
 
@@ -725,7 +725,7 @@ az functionapp function show --resource-group My-resource-group  --name dt-funct
 
   "secretsFileHref": null,
 
-  "testData": "{\r\n  \"topic\": \"/subscriptions/5b4b650e-28b9-4790-b3ab-ddbd88d727c4/resourcegroups/test/providers/Microsoft.EventHub/namespaces/test\",\r\n  \"subject\": \"eventhubs/test\",\r\n  \"eventType\": \"captureFileCreated\",\r\n  \"eventTime\": \"2017-07-14T23:10:27.7689666Z\",\r\n  \"id\": \"7b11c4ce-1c34-4416-848b-1730e766f126\",\r\n  \"data\": {\r\n    \"fileUrl\": \https://test.blob.core.windows.net/debugging/testblob.txt\,\r\n    \"fileType\": \"AzureBlockBlob\",\r\n    \"partitionId\": \"1\",\r\n    \"sizeInBytes\": 0,\r\n    \"eventCount\": 0,\r\n    \"firstSequenceNumber\": -1,\r\n    \"lastSequenceNumber\": -1,\r\n    \"firstEnqueueTime\": \"0001-01-01T00:00:00\",\r\n    \"lastEnqueueTime\": \"0001-01-01T00:00:00\"\r\n  },\r\n  \"dataVersion\": \"\",\r\n  \"metadataVersion\": \"1\" \r\n}\r\n",
+  "testData": "{\r\n  \"topic\": \"/subscriptions/resourcegroups/test/providers/Microsoft.EventHub/namespaces/test\",\r\n  \"subject\": \"eventhubs/test\",\r\n  \"eventType\": \"captureFileCreated\",\r\n  \"eventTime\": \"2017-07-14T23:10:27.7689666Z\",\r\n  \"id\": \"\",\r\n  \"data\": {\r\n    \"fileUrl\": \https://test.blob.core.windows.net/debugging/testblob.txt\,\r\n    \"fileType\": \"AzureBlockBlob\",\r\n    \"partitionId\": \"1\",\r\n    \"sizeInBytes\": 0,\r\n    \"eventCount\": 0,\r\n    \"firstSequenceNumber\": -1,\r\n    \"lastSequenceNumber\": -1,\r\n    \"firstEnqueueTime\": \"0001-01-01T00:00:00\",\r\n    \"lastEnqueueTime\": \"0001-01-01T00:00:00\"\r\n  },\r\n  \"dataVersion\": \"\",\r\n  \"metadataVersion\": \"1\" \r\n}\r\n",
 
   "testDataHref": https://dt-functions.azurewebsites.net/admin/vfs/data/Functions/sampledata/ProcessDTRoutedData.dat,
 
@@ -787,7 +787,7 @@ demo [ ~ ]$ az functionapp function show --resource-group My-resource-group  --n
 
   "secretsFileHref": null,
 
-  "testData": "{\r\n  \"topic\": \"/subscriptions/5b4b650e-28b9-4790-b3ab-ddbd88d727c4/resourcegroups/test/providers/Microsoft.EventHub/namespaces/test\",\r\n  \"subject\": \"eventhubs/test\",\r\n  \"eventType\": \"captureFileCreated\",\r\n  \"eventTime\": \"2017-07-14T23:10:27.7689666Z\",\r\n  \"id\": \"7b11c4ce-1c34-4416-848b-1730e766f126\",\r\n  \"data\": {\r\n    \"fileUrl\": \https://test.blob.core.windows.net/debugging/testblob.txt\,\r\n    \"fileType\": \"AzureBlockBlob\",\r\n    \"partitionId\": \"1\",\r\n    \"sizeInBytes\": 0,\r\n    \"eventCount\": 0,\r\n    \"firstSequenceNumber\": -1,\r\n    \"lastSequenceNumber\": -1,\r\n    \"firstEnqueueTime\": \"0001-01-01T00:00:00\",\r\n    \"lastEnqueueTime\": \"0001-01-01T00:00:00\"\r\n  },\r\n  \"dataVersion\": \"\",\r\n  \"metadataVersion\": \"1\" \r\n}\r\n",
+  "testData": "{\r\n  \"topic\": \"/subscriptions/resourcegroups/test/providers/Microsoft.EventHub/namespaces/test\",\r\n  \"subject\": \"eventhubs/test\",\r\n  \"eventType\": \"captureFileCreated\",\r\n  \"eventTime\": \"2017-07-14T23:10:27.7689666Z\",\r\n  \"id\": \",\r\n  \"data\": {\r\n    \"fileUrl\": \https://test.blob.core.windows.net/debugging/testblob.txt\,\r\n    \"fileType\": \"AzureBlockBlob\",\r\n    \"partitionId\": \"1\",\r\n    \"sizeInBytes\": 0,\r\n    \"eventCount\": 0,\r\n    \"firstSequenceNumber\": -1,\r\n    \"lastSequenceNumber\": -1,\r\n    \"firstEnqueueTime\": \"0001-01-01T00:00:00\",\r\n    \"lastEnqueueTime\": \"0001-01-01T00:00:00\"\r\n  },\r\n  \"dataVersion\": \"\",\r\n  \"metadataVersion\": \"1\" \r\n}\r\n",
 
   "testDataHref": https://dt-functions.azurewebsites.net/admin/vfs/data/Functions/sampledata/ProcessHubToDTEvents.dat,
 
@@ -796,9 +796,6 @@ demo [ ~ ]$ az functionapp function show --resource-group My-resource-group  --n
 }
 
  
-
- 
-
 az functionapp identity assign --resource-group My-resource-group --name dt-functions
 
  
@@ -855,7 +852,7 @@ demo [ ~ ]$ az dt role-assignment create --resource-group My-resource-group --dt
 
   "type": "Microsoft.Authorization/roleAssignments",
 
-  "updatedBy": "d9d83428-daf2-4cbb-869c-531856149a9f",
+  "updatedBy": "",
 
   "updatedOn": "2023-07-04T08:49:35.888734+00:00"
 
@@ -899,7 +896,7 @@ demo [ ~ ]$ az functionapp config appsettings set --resource-group My-resource-g
 
     "slotSetting": false,
 
-    "value": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=demostorage;AccountKey=bgCHbwHw6QTgh5WwqqOEiLf7HW6QOZCZB1BQ/Z7j8mfKMK5zaL0869nkXMrH1rc4C0+OOCs5Cekl+AStEYTLIQ=="
+    "value": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=demostorage;AccountKey=<you-Key>"
 
   },
 
@@ -909,7 +906,7 @@ demo [ ~ ]$ az functionapp config appsettings set --resource-group My-resource-g
 
     "slotSetting": false,
 
-    "value": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=demostorage;AccountKey=bgCHbwHw6QTgh5WwqqOEiLf7HW6QOZCZB1BQ/Z7j8mfKMK5zaL0869nkXMrH1rc4C0+OOCs5Cekl+AStEYTLIQ=="
+    "value": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=demostorage;AccountKey=<key>"
 
   },
 
@@ -939,7 +936,7 @@ demo [ ~ ]$ az functionapp config appsettings set --resource-group My-resource-g
 
     "slotSetting": false,
 
-    "value": "Endpoint=sb://lifecycleevents.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=19xojquQ3neD3SHdwEI90q+3/pUNjTa/b+AEhJe7AC8=;EntityPath=deviceevents"
+    "value": "Endpoint=sb://lifecycleevents.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=<key>;EntityPath=deviceevents"
 
   },
 
