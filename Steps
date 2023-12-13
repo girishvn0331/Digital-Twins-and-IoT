@@ -1,0 +1,8 @@
+-  Process simulated telemetry from an IoT Hub device
+-  Here are the actions you'll complete to set up this device connection:
+-  Create an IoT hub that will manage the simulated device
+-  Connect the IoT hub to the appropriate Azure function by setting up an event subscription
+-  Register the simulated device in IoT hub
+-  Run the simulated device and generate telemetry
+-  Query Azure Digital Twins to see the live results
+-  Create an IoT Hub instance  (we already created)
