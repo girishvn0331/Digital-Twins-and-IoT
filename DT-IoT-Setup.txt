@@ -1,0 +1,994 @@
+
+az storage account create --name demostorage --location "Central India" --resource-group My-resource-group --sku Standard_LRS
+
+The public access to all blobs or containers in the storage account will be disallowed by default in the future, which means default value for --allow-blob-public-access is still null but will be equivalent to false.
+
+{
+
+  "accessTier": "Hot",
+
+  "allowBlobPublicAccess": true,
+
+  "allowCrossTenantReplication": null,
+
+  "allowSharedKeyAccess": null,
+
+  "allowedCopyScope": null,
+
+  "azureFilesIdentityBasedAuthentication": null,
+
+  "blobRestoreStatus": null,
+
+  "creationTime": "2023-07-04T07:24:46.498373+00:00",
+
+  "customDomain": null,
+
+  "defaultToOAuthAuthentication": null,
+
+  "dnsEndpointType": null,
+
+  "enableHttpsTrafficOnly": true,
+
+  "enableNfsV3": null,
+
+  "encryption": {
+
+    "encryptionIdentity": null,
+
+    "keySource": "Microsoft.Storage",
+
+    "keyVaultProperties": null,
+
+    "requireInfrastructureEncryption": null,
+
+    "services": {
+
+      "blob": {
+
+        "enabled": true,
+
+        "keyType": "Account",
+
+        "lastEnabledTime": "2023-07-04T07:24:46.545253+00:00"
+
+      },
+
+      "file": {
+
+        "enabled": true,
+
+        "keyType": "Account",
+
+        "lastEnabledTime": "2023-07-04T07:24:46.545253+00:00"
+
+      },
+
+      "queue": null,
+
+      "table": null
+
+    }
+
+  },
+
+  "extendedLocation": null,
+
+  "failoverInProgress": null,
+
+  "geoReplicationStats": null,
+
+  "id": "/subscriptions/<my-subscription>/resourceGroups/My-resource-group/providers/Microsoft.Storage/storageAccounts/demostorage",
+
+  "identity": null,
+
+  "immutableStorageWithVersioning": null,
+
+  "isHnsEnabled": null,
+
+  "isLocalUserEnabled": null,
+
+  "isSftpEnabled": null,
+
+  "keyCreationTime": {
+
+    "key1": "2023-07-04T07:24:46.545253+00:00",
+
+    "key2": "2023-07-04T07:24:46.545253+00:00"
+
+  },
+
+  "keyPolicy": null,
+
+  "kind": "StorageV2",
+
+  "largeFileSharesState": null,
+
+  "lastGeoFailoverTime": null,
+
+  "location": "centralindia",
+
+  "minimumTlsVersion": "TLS1_0",
+
+  "name": "demostorage",
+
+  "networkRuleSet": {
+
+    "bypass": "AzureServices",
+
+    "defaultAction": "Allow",
+
+    "ipRules": [],
+
+    "resourceAccessRules": null,
+
+    "virtualNetworkRules": []
+
+  },
+
+  "primaryEndpoints": {
+
+    "blob": https://demostorage.blob.core.windows.net/,
+
+    "dfs": https://demostorage.dfs.core.windows.net/,
+
+    "file": https://demostorage.file.core.windows.net/,
+
+    "internetEndpoints": null,
+
+    "microsoftEndpoints": null,
+
+    "queue": https://demostorage.queue.core.windows.net/,
+
+    "table": https://demostorage.table.core.windows.net/,
+
+    "web": https://demostorage.z29.web.core.windows.net/
+
+  },
+
+  "primaryLocation": "centralindia",
+
+  "privateEndpointConnections": [],
+
+  "provisioningState": "Succeeded",
+
+  "publicNetworkAccess": null,
+
+  "resourceGroup": "My-resource-group",
+
+  "routingPreference": null,
+
+  "sasPolicy": null,
+
+  "secondaryEndpoints": null,
+
+  "secondaryLocation": null,
+
+  "sku": {
+
+    "name": "Standard_LRS",
+
+    "tier": "Standard"
+
+  },
+
+  "statusOfPrimary": "available",
+
+  "statusOfSecondary": null,
+
+  "storageAccountSkuConversionStatus": null,
+
+  "tags": {},
+
+  "type": "Microsoft.Storage/storageAccounts"
+
+}
+
+ 
+
+# To check consumption locations
+
+$az functionapp list-consumption-locations
+
+ 
+
+az functionapp create --name dt-functions --storage-account demostorage  --functions-version 4 --consumption-plan-location centralindia --runtime dotnet --runtime-version 6 --resource-group My-resource-group
+
+ 
+
+ 
+
+demo [ ~ ]$ az functionapp create --name dt-functions --storage-account demostorage  --functions-version 4 --consumption-plan-location centralindia --runtime dotnet --runtime-version 6 --resource-group My-resource-group
+
+Application Insights "dt-functions" was created for this Function App. You can visit https://portal.azure.com/#resource/subscriptions/<my-subscription>/resourceGroups/My-resource-group/providers/microsoft.insights/components/dt-functions/overview to view your Application Insights component
+
+{
+
+ "availabilityState": "Normal",
+
+  "clientAffinityEnabled": false,
+
+  "clientCertEnabled": false,
+
+  "clientCertExclusionPaths": null,
+
+  "clientCertMode": "Required",
+
+  "cloningInfo": null,
+
+  "containerSize": 1536,
+
+  "customDomainVerificationId": "83391E52B0C79363EE092E1ADCDEB54D3A6595EC9683B5084F1E207EC7EF7027",
+
+  "dailyMemoryTimeQuota": 0,
+
+  "defaultHostName": "dt-functions.azurewebsites.net",
+
+  "enabled": true,
+
+  "enabledHostNames": [
+
+    "dt-functions.azurewebsites.net",
+
+    "dt-functions.scm.azurewebsites.net"
+
+  ],
+
+  "extendedLocation": null,
+
+  "hostNameSslStates": [
+
+    {
+
+      "certificateResourceId": null,
+
+      "hostType": "Standard",
+
+      "ipBasedSslResult": null,
+
+      "ipBasedSslState": "NotConfigured",
+
+      "name": "dt-functions.azurewebsites.net",
+
+      "sslState": "Disabled",
+
+      "thumbprint": null,
+
+      "toUpdate": null,
+
+      "toUpdateIpBasedSsl": null,
+
+      "virtualIp": null
+
+    },
+
+    {
+
+      "certificateResourceId": null,
+
+      "hostType": "Repository",
+
+      "ipBasedSslResult": null,
+
+      "ipBasedSslState": "NotConfigured",
+
+      "name": "dt-functions.scm.azurewebsites.net",
+
+      "sslState": "Disabled",
+
+      "thumbprint": null,
+
+      "toUpdate": null,
+
+      "toUpdateIpBasedSsl": null,
+
+      "virtualIp": null
+
+    }
+
+  ],
+
+  "hostNames": [
+
+    "dt-functions.azurewebsites.net"
+
+  ],
+
+  "hostNamesDisabled": false,
+
+  "hostingEnvironmentProfile": null,
+
+  "httpsOnly": false,
+
+  "hyperV": false,
+
+  "id": "/subscriptions/<my-subscription>/resourceGroups/My-resource-group/providers/Microsoft.Web/sites/dt-functions",
+
+  "identity": null,
+
+  "inProgressOperationId": null,
+
+  "isDefaultContainer": null,
+
+  "isXenon": false,
+
+  "keyVaultReferenceIdentity": "SystemAssigned",
+
+  "kind": "functionapp",
+
+  "lastModifiedTimeUtc": "2023-07-04T07:33:27.190000",
+
+  "location": "centralindia",
+
+  "maxNumberOfWorkers": null,
+
+  "name": "dt-functions",
+
+  "outboundIpAddresses": "20.204.218.251,20.204.221.48,20.204.222.92,20.204.222.136,20.204.223.202,20.207.104.118,20.192.170.11",
+
+  "possibleOutboundIpAddresses": "20.204.218.251,20.204.221.48,20.204.222.92,20.204.222.136,20.204.223.202,20.207.104.118,20.207.105.212,20.204.218.4,20.204.218.122,20.207.106.54,20.207.108.37,20.207.108.162,20.207.111.19,20.219.41.239,20.219.42.144,20.204.219.216,20.219.43.124,20.219.44.75,20.219.45.80,20.207.105.195,20.219.40.197,20.219.45.106,20.219.43.182,20.204.219.233,20.207.111.211,20.207.109.178,20.207.111.220,20.219.40.149,20.219.41.103,20.219.42.157,20.192.170.11",
+
+  "publicNetworkAccess": null,
+
+  "redundancyMode": "None",
+
+  "repositorySiteName": "dt-functions",
+
+  "reserved": false,
+
+  "resourceGroup": "My-resource-group",
+
+  "scmSiteAlsoStopped": false,
+
+  "serverFarmId": "/subscriptions/<my-subscription>/resourceGroups/My-resource-group/providers/Microsoft.Web/serverfarms/CentralIndiaPlan",
+
+  "siteConfig": {
+
+    "acrUseManagedIdentityCreds": false,
+
+    "acrUserManagedIdentityId": null,
+
+    "alwaysOn": false,
+
+    "antivirusScanEnabled": null,
+
+    "apiDefinition": null,
+
+    "apiManagementConfig": null,
+
+    "appCommandLine": null,
+
+    "appSettings": null,
+
+    "autoHealEnabled": null,
+
+    "autoHealRules": null,
+
+    "autoSwapSlotName": null,
+
+    "azureMonitorLogCategories": null,
+
+    "azureStorageAccounts": null,
+
+    "connectionStrings": null,
+
+    "cors": null,
+
+    "customAppPoolIdentityAdminState": null,
+
+    "customAppPoolIdentityTenantState": null,
+
+    "defaultDocuments": null,
+
+    "detailedErrorLoggingEnabled": null,
+
+    "documentRoot": null,
+
+    "elasticWebAppScaleLimit": null,
+
+    "experiments": null,
+
+    "fileChangeAuditEnabled": null,
+
+    "ftpsState": null,
+
+    "functionAppScaleLimit": 0,
+
+    "functionsRuntimeScaleMonitoringEnabled": null,
+
+    "handlerMappings": null,
+
+    "healthCheckPath": null,
+
+    "http20Enabled": false,
+
+    "http20ProxyFlag": null,
+
+    "httpLoggingEnabled": null,
+
+    "ipSecurityRestrictions": [
+
+      {
+
+        "action": "Allow",
+
+        "description": "Allow all access",
+
+        "headers": null,
+
+        "ipAddress": "Any",
+
+        "name": "Allow all",
+
+        "priority": 2147483647,
+
+        "subnetMask": null,
+
+        "subnetTrafficTag": null,
+
+        "tag": null,
+
+        "vnetSubnetResourceId": null,
+
+        "vnetTrafficTag": null
+
+      }
+
+    ],
+
+    "ipSecurityRestrictionsDefaultAction": null,
+
+    "javaContainer": null,
+
+    "javaContainerVersion": null,
+
+    "javaVersion": null,
+
+    "keyVaultReferenceIdentity": null,
+
+    "limits": null,
+
+    "linuxFxVersion": "",
+
+    "loadBalancing": null,
+
+    "localMySqlEnabled": null,
+
+    "logsDirectorySizeLimit": null,
+
+    "machineKey": null,
+
+    "managedPipelineMode": null,
+
+    "managedServiceIdentityId": null,
+
+    "metadata": null,
+
+    "minTlsCipherSuite": null,
+
+    "minTlsVersion": null,
+
+    "minimumElasticInstanceCount": 0,
+
+    "netFrameworkVersion": null,
+
+    "nodeVersion": null,
+
+    "numberOfWorkers": 1,
+
+    "phpVersion": null,
+
+    "powerShellVersion": null,
+
+    "preWarmedInstanceCount": null,
+
+    "publicNetworkAccess": null,
+
+    "publishingPassword": null,
+
+    "publishingUsername": null,
+
+    "push": null,
+
+    "pythonVersion": null,
+
+    "remoteDebuggingEnabled": null,
+
+    "remoteDebuggingVersion": null,
+
+    "requestTracingEnabled": null,
+
+    "requestTracingExpirationTime": null,
+
+    "routingRules": null,
+
+    "runtimeADUser": null,
+
+    "runtimeADUserPassword": null,
+
+    "scmIpSecurityRestrictions": [
+
+      {
+
+        "action": "Allow",
+
+        "description": "Allow all access",
+
+        "headers": null,
+
+        "ipAddress": "Any",
+
+        "name": "Allow all",
+
+        "priority": 2147483647,
+
+        "subnetMask": null,
+
+        "subnetTrafficTag": null,
+
+        "tag": null,
+
+        "vnetSubnetResourceId": null,
+
+        "vnetTrafficTag": null
+
+      }
+
+    ],
+
+    "scmIpSecurityRestrictionsDefaultAction": null,
+
+    "scmIpSecurityRestrictionsUseMain": null,
+
+    "scmMinTlsVersion": null,
+
+    "scmType": null,
+
+    "sitePort": null,
+
+    "storageType": null,
+
+    "supportedTlsCipherSuites": null,
+
+    "tracingOptions": null,
+
+    "use32BitWorkerProcess": null,
+
+    "virtualApplications": null,
+
+    "vnetName": null,
+
+    "vnetPrivatePortsCount": null,
+
+    "vnetRouteAllEnabled": null,
+
+    "webSocketsEnabled": null,
+
+    "websiteTimeZone": null,
+
+    "winAuthAdminState": null,
+
+   "winAuthTenantState": null,
+
+    "windowsConfiguredStacks": null,
+
+    "windowsFxVersion": null,
+
+    "xManagedServiceIdentityId": null
+
+  },
+
+  "slotSwapStatus": null,
+
+  "state": "Running",
+
+  "storageAccountRequired": false,
+
+  "suspendedTill": null,
+
+  "tags": null,
+
+  "targetSwapSlot": null,
+
+  "trafficManagerHostNames": null,
+
+  "type": "Microsoft.Web/sites",
+
+  "usageState": "Normal",
+
+  "virtualNetworkSubnetId": null,
+
+  "vnetContentShareEnabled": false,
+
+  "vnetImagePullEnabled": false,
+
+  "vnetRouteAllEnabled": false
+
+}
+
+ 
+
+Publish from AZ Cli
+
+ 
+
+demo [ ~ ]$ az functionapp deployment source config-zip --resource-group My-resource-group --name dt-functions --src /home/demo/publish.zip
+
+Getting scm site credentials for zip deployment
+
+Starting zip deployment. This operation can take a while to complete ...
+
+Deployment endpoint responded with status code 202
+
+{
+
+  "active": true,
+
+  "author": "N/A",
+
+  "author_email": "N/A",
+
+  "complete": true,
+
+  "deployer": "ZipDeploy",
+
+  "end_time": "2023-07-04T07:52:18.0021332Z",
+
+  "id": "544919e93ab348a5a1f5d6bf216f9d6e",
+
+  "is_readonly": true,
+
+  "is_temp": false,
+
+  "last_success_end_time": "2023-07-04T07:52:18.0021332Z",
+
+  "log_url": https://dt-functions.scm.azurewebsites.net/api/deployments/latest/log,
+
+  "message": "Created via a push deployment",
+
+  "progress": "",
+
+  "provisioningState": "Succeeded",
+
+  "received_time": "2023-07-04T07:52:09.2439251Z",
+
+  "site_name": "dt-functions",
+
+  "start_time": "2023-07-04T07:52:10.2456244Z",
+
+  "status": 4,
+
+  "status_text": "",
+
+  "url": https://dt-functions.scm.azurewebsites.net/api/deployments/latest
+
+}
+
+ 
+
+ 
+
+az functionapp function show --resource-group My-resource-group  --name dt-functions --function-name ProcessDTRoutedData
+
+az functionapp function show --resource-group My-resource-group  --name dt-functions --function-name ProcessHubToDTEvents
+
+ 
+
+az functionapp function show --resource-group My-resource-group  --name dt-functions --function-name ProcessDTRoutedData
+
+{
+
+  "config": {
+
+    "bindings": [
+
+      {
+
+        "direction": "in",
+
+        "name": "eventGridEvent",
+
+        "type": "eventGridTrigger"
+
+      }
+
+    ]
+
+  },
+
+  "configHref": https://dt-functions.azurewebsites.net/admin/vfs/site/wwwroot/ProcessDTRoutedData/function.json,
+
+  "files": null,
+
+  "functionAppId": null,
+
+  "href": https://dt-functions.azurewebsites.net/admin/functions/ProcessDTRoutedData,
+
+  "id": "/subscriptions/<my-subscription>/resourceGroups/My-resource-group/providers/Microsoft.Web/sites/dt-functions/functions/ProcessDTRoutedData",
+
+  "invokeUrlTemplate": null,
+
+  "isDisabled": false,
+
+  "kind": null,
+
+  "language": "CSharp",
+
+  "location": "Central India",
+
+  "name": "dt-functions/ProcessDTRoutedData",
+
+  "resourceGroup": "My-resource-group",
+
+  "scriptHref": https://dt-functions.azurewebsites.net/admin/vfs/site/wwwroot/ProcessDTRoutedData/run.csx,
+
+  "scriptRootPathHref": https://dt-functions.azurewebsites.net/admin/vfs/site/wwwroot/ProcessDTRoutedData/,
+
+  "secretsFileHref": null,
+
+  "testData": "{\r\n  \"topic\": \"/subscriptions/5b4b650e-28b9-4790-b3ab-ddbd88d727c4/resourcegroups/test/providers/Microsoft.EventHub/namespaces/test\",\r\n  \"subject\": \"eventhubs/test\",\r\n  \"eventType\": \"captureFileCreated\",\r\n  \"eventTime\": \"2017-07-14T23:10:27.7689666Z\",\r\n  \"id\": \"7b11c4ce-1c34-4416-848b-1730e766f126\",\r\n  \"data\": {\r\n    \"fileUrl\": \https://test.blob.core.windows.net/debugging/testblob.txt\,\r\n    \"fileType\": \"AzureBlockBlob\",\r\n    \"partitionId\": \"1\",\r\n    \"sizeInBytes\": 0,\r\n    \"eventCount\": 0,\r\n    \"firstSequenceNumber\": -1,\r\n    \"lastSequenceNumber\": -1,\r\n    \"firstEnqueueTime\": \"0001-01-01T00:00:00\",\r\n    \"lastEnqueueTime\": \"0001-01-01T00:00:00\"\r\n  },\r\n  \"dataVersion\": \"\",\r\n  \"metadataVersion\": \"1\" \r\n}\r\n",
+
+  "testDataHref": https://dt-functions.azurewebsites.net/admin/vfs/data/Functions/sampledata/ProcessDTRoutedData.dat,
+
+  "type": "Microsoft.Web/sites/functions"
+
+}
+
+ 
+
+demo [ ~ ]$ az functionapp function show --resource-group My-resource-group  --name dt-functions --function-name ProcessHubToDTEvents
+
+{
+
+  "config": {
+
+    "bindings": [
+
+      {
+
+        "direction": "in",
+
+        "name": "eventGridEvent",
+
+        "type": "eventGridTrigger"
+
+      }
+
+    ]
+
+  },
+
+  "configHref": https://dt-functions.azurewebsites.net/admin/vfs/site/wwwroot/ProcessHubToDTEvents/function.json,
+
+  "files": null,
+
+  "functionAppId": null,
+
+  "href": https://dt-functions.azurewebsites.net/admin/functions/ProcessHubToDTEvents,
+
+  "id": "/subscriptions/<my-subscription>/resourceGroups/My-resource-group/providers/Microsoft.Web/sites/dt-functions/functions/ProcessHubToDTEvents",
+
+  "invokeUrlTemplate": null,
+
+  "isDisabled": false,
+
+  "kind": null,
+
+  "language": "CSharp",
+
+  "location": "Central India",
+
+  "name": "dt-functions/ProcessHubToDTEvents",
+
+  "resourceGroup": "My-resource-group",
+
+  "scriptHref": https://dt-functions.azurewebsites.net/admin/vfs/site/wwwroot/ProcessHubToDTEvents/run.csx,
+
+  "scriptRootPathHref": https://dt-functions.azurewebsites.net/admin/vfs/site/wwwroot/ProcessHubToDTEvents/,
+
+  "secretsFileHref": null,
+
+  "testData": "{\r\n  \"topic\": \"/subscriptions/5b4b650e-28b9-4790-b3ab-ddbd88d727c4/resourcegroups/test/providers/Microsoft.EventHub/namespaces/test\",\r\n  \"subject\": \"eventhubs/test\",\r\n  \"eventType\": \"captureFileCreated\",\r\n  \"eventTime\": \"2017-07-14T23:10:27.7689666Z\",\r\n  \"id\": \"7b11c4ce-1c34-4416-848b-1730e766f126\",\r\n  \"data\": {\r\n    \"fileUrl\": \https://test.blob.core.windows.net/debugging/testblob.txt\,\r\n    \"fileType\": \"AzureBlockBlob\",\r\n    \"partitionId\": \"1\",\r\n    \"sizeInBytes\": 0,\r\n    \"eventCount\": 0,\r\n    \"firstSequenceNumber\": -1,\r\n    \"lastSequenceNumber\": -1,\r\n    \"firstEnqueueTime\": \"0001-01-01T00:00:00\",\r\n    \"lastEnqueueTime\": \"0001-01-01T00:00:00\"\r\n  },\r\n  \"dataVersion\": \"\",\r\n  \"metadataVersion\": \"1\" \r\n}\r\n",
+
+  "testDataHref": https://dt-functions.azurewebsites.net/admin/vfs/data/Functions/sampledata/ProcessHubToDTEvents.dat,
+
+  "type": "Microsoft.Web/sites/functions"
+
+}
+
+ 
+
+ 
+
+az functionapp identity assign --resource-group My-resource-group --name dt-functions
+
+ 
+
+demo [ ~ ]$ az functionapp identity assign --resource-group My-resource-group --name dt-functions
+
+{
+
+  "principalId": "<my-principalId>",
+
+  "tenantId": "<my-tenantId>",
+
+  "type": "SystemAssigned",
+
+  "userAssignedIdentities": null
+
+}
+
+ 
+
+az dt role-assignment create --resource-group My-resource-group --dt-name demo-digital-twins --assignee "<my-principalId>" --role "Azure Digital Twins Data Owner"
+
+ 
+
+demo [ ~ ]$ az dt role-assignment create --resource-group My-resource-group --dt-name demo-digital-twins --assignee "<my-principalId>" --role "Azure Digital Twins Data Owner"
+
+{
+
+  "condition": null,
+
+  "conditionVersion": null,
+
+  "createdBy": null,
+
+  "createdOn": "2023-07-04T08:49:35.242728+00:00",
+
+  "delegatedManagedIdentityResourceId": null,
+
+  "description": null,
+
+  "id": "/subscriptions/<my-subscription>/resourceGroups/My-resource-group/providers/Microsoft.DigitalTwins/digitalTwinsInstances/demo-digital-twins/providers/Microsoft.Authorization/roleAssignments/a16c7b01-9eac-4f9d-9e14-f8a00b6559c2",
+
+  "name": "a16c7b01-9eac-4f9d-9e14-f8a00b6559c2",
+
+  "principalId": "<my-principalId>",
+
+  "principalType": "ServicePrincipal",
+
+  "resourceGroup": "My-resource-group",
+
+  "roleDefinitionId": "/subscriptions/<my-subscription>/providers/Microsoft.Authorization/roleDefinitions/bcd981a7-7f74-457b-83e1-cceb9e632ffe",
+
+  "scope": "/subscriptions/<my-subscription>/resourceGroups/My-resource-group/providers/Microsoft.DigitalTwins/digitalTwinsInstances/demo-digital-twins",
+
+  "type": "Microsoft.Authorization/roleAssignments",
+
+  "updatedBy": "d9d83428-daf2-4cbb-869c-531856149a9f",
+
+  "updatedOn": "2023-07-04T08:49:35.888734+00:00"
+
+}
+
+ 
+
+ 
+
+az functionapp config appsettings set --resource-group My-resource-group --name dt-functions --settings "ADT_SERVICE_URL=https://demo-digital-twins.api.jpe.digitaltwins.azure.net"
+
+ 
+
+demo [ ~ ]$ az functionapp config appsettings set --resource-group My-resource-group --name dt-functions --settings "ADT_SERVICE_URL=https://demo-digital-twins.api.jpe.digitaltwins.azure.net"
+
+[
+
+  {
+
+    "name": "FUNCTIONS_WORKER_RUNTIME",
+
+    "slotSetting": false,
+
+    "value": "dotnet"
+
+  },
+
+  {
+
+    "name": "FUNCTIONS_EXTENSION_VERSION",
+
+    "slotSetting": false,
+
+    "value": "~4"
+
+  },
+
+  {
+
+    "name": "AzureWebJobsStorage",
+
+    "slotSetting": false,
+
+    "value": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=demostorage;AccountKey=bgCHbwHw6QTgh5WwqqOEiLf7HW6QOZCZB1BQ/Z7j8mfKMK5zaL0869nkXMrH1rc4C0+OOCs5Cekl+AStEYTLIQ=="
+
+  },
+
+  {
+
+    "name": "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING",
+
+    "slotSetting": false,
+
+    "value": "DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=demostorage;AccountKey=bgCHbwHw6QTgh5WwqqOEiLf7HW6QOZCZB1BQ/Z7j8mfKMK5zaL0869nkXMrH1rc4C0+OOCs5Cekl+AStEYTLIQ=="
+
+  },
+
+  {
+
+    "name": "WEBSITE_CONTENTSHARE",
+
+    "slotSetting": false,
+
+    "value": "dt-functionsf8ca68145b1a"
+
+  },
+
+  {
+
+    "name": "APPINSIGHTS_INSTRUMENTATIONKEY",
+
+    "slotSetting": false,
+
+    "value": "7505a68c-7458-42b7-923e-6eff02edfc2a"
+
+  },
+
+  {
+
+    "name": "lifecycleevents_RootManageSharedAccessKey_EVENTHUB",
+
+    "slotSetting": false,
+
+    "value": "Endpoint=sb://lifecycleevents.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=19xojquQ3neD3SHdwEI90q+3/pUNjTa/b+AEhJe7AC8=;EntityPath=deviceevents"
+
+  },
+
+  {
+
+    "name": "ADT_SERVICE_URL",
+
+    "slotSetting": false,
+
+    "value": https://demo-digital-twins.api.jpe.digitaltwins.azure.net
+
+  }
+
+]
+
+ 
+
+Process simulated telemetry from an IoT Hub device
+
+ 
+
+Here are the actions you'll complete to set up this device connection:
+
+ 
+
+Create an IoT hub that will manage the simulated device
+
+Connect the IoT hub to the appropriate Azure function by setting up an event subscription
+
+Register the simulated device in IoT hub
+
+Run the simulated device and generate telemetry
+
+Query Azure Digital Twins to see the live results
+
+ 
+
+Create an IoT Hub instance  (we already created)
+
+ 
+
+az iot hub create --name <name-for-your-IoT-hub> --resource-group <your-resource-group> --sku S1
+
+ 
+
+ 
+
+az eventgrid event-subscription create --name demo-hub-event --event-delivery-schema eventgridschema --source-resource-id /subscriptions/<my-subscription>/resourceGroups/My-resource-group/providers/Microsoft.Devices/IotHubs/demo-iot-hub --included-event-types Microsoft.Devices.DeviceTelemetry --endpoint-type azurefunction --endpoint /subscriptions/<my-subscription>/resourceGroups/My-resource-group/providers/Microsoft.Web/sites/dt-functions/functions/ProcessHubToDTEvents
+
+ 
+
+az eventgrid event-subscription create --name <name-for-hub-event-subscription> --event-delivery-schema eventgridschema --source-resource-id /subscriptions/<your-subscription-ID>/resourceGroups/<your-resource-group>/providers/Microsoft.Devices/IotHubs/<your-IoT-hub> --included-event-types Microsoft.Devices.DeviceTelemetry --endpoint-type azurefunction --endpoint /subscriptions/<your-subscription-ID>/resourceGroups/<your-resource-group>/providers/Microsoft.Web/sites/<your-function-app>/functions/ProcessHubToDTEvents
