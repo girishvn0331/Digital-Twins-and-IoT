@@ -1,6 +1,6 @@
-
+'''
 az storage account create --name demostorage --location "Central India" --resource-group My-resource-group --sku Standard_LRS
-
+'''
 The public access to all blobs or containers in the storage account will be disallowed by default in the future, which means default value for --allow-blob-public-access is still null but will be equivalent to false.
 
 {
